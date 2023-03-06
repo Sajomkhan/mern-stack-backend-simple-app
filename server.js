@@ -7,8 +7,7 @@ const bodyParser = require('body-parser')
 const app = express();
 const Todo = require('./models/Todo');
 
-// const BASE_URL = process.env.BASE_URL || 3001
-const BASE_URL = 3001
+const PORT = process.env.PORT || 3001
 const DTABASE = process.env.DTABASE
 
 app.use(cors());
@@ -29,8 +28,8 @@ const connectDB = async() => {
     }
 }
 
-app.listen(BASE_URL, ()=>{
-    console.log(`server is running at http://localhost:${BASE_URL}`);
+app.listen(PORT, ()=>{
+    console.log(`server is running at http://localhost:${PORT}`);
     connectDB()
 })
 
